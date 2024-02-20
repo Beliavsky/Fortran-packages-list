@@ -391,6 +391,8 @@ List of projects that can be built with the [Fortran Package Manager](https://gi
 
 [sourcery](https://github.com/sourceryinstitute/sourcery): utilities such as array functions, assertions, emulated intrinsic functions: findloc, emulated collective subroutines: co_sum, co_broadcast, user-defined collective subroutines: co_all, string functions, and classes for parallel data partitioning and gathering and the (Co-)Object pattern abstract parent, by Damian Rouson and Brad Richardson
 
+[stdlib](https://github.com/fortran-lang/stdlib): utilities, algorithms, and mathematics codes for a Fortran Standard Library, from fortran-lang. Has codes for sorting, statistics, strings, hashing, probability distributions, random number generation, numerical integration, and other numerical methods.
+
 [SQLite for Fortran (sqliteff)](https://github.com/everythingfunctional/sqliteff): thin wrapper around the SQLite library, by Brad Richardson. The sqliteff_* functions are effectively identical to the sqlite3_* functions that would be called from C, but with Fortran intrinsics and types.
 
 [timer](https://github.com/zoziha/timer): module to get the number of seconds between two timestamps, by zoziha
