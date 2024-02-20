@@ -1,4 +1,4 @@
-## Fortran-packages-list
+## Fortran packages list
 List of projects that can be built with the Fortran Package Manager
 
 * [Art and Music](#art-and-music)
