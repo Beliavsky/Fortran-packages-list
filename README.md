@@ -145,7 +145,6 @@ List of projects that can be built with the [Fortran Package Manager](https://gi
 
 [progress-bar](https://github.com/zoziha/progress-bar): simple progress bar module that is typically used to display the time integration process, by zoziha
 
-An encoding error occurred:  'charmap' codec can't encode character '\u0159' in position 104: character maps to <undefined>
 [to_f90](https://github.com/jbdv-no/to_f90): Alan Miller's tool for converting Fortran 77 code to free-form Fortran 90 code, from jbdv-no
 
 [version-f](https://github.com/minhqdao/version-f): implementation of [Semantic Versioning 2.0.0](https://semver.org/) by Minh Dao that aims to be a user-friendly tool for handling versions in Fortran projects.
