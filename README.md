@@ -674,6 +674,8 @@ from the companion website to the book [CUDA Fortran for Scientists and Engineer
 
 [dftd4](https://github.com/dftd4/dftd4): Generally Applicable Atomic-Charge Dependent London Dispersion Correction
 
+[Finite Element Solvers for Atomic Structure Calculations (featom)](https://github.com/atomic-solvers/featom): library implementing accurate and efficient radial Schrödinger and Dirac finite element solvers, by Ondřej Čertík, Rohit Goswami, and Isuru Fernando. The formulation admits general potentials and meshes: uniform, exponential, or other.
+
 [General Quantum Chemistry Properties Grabber (gpg)](https://github.com/lukaswittmann/gpg): obtains a wide range of properties, including molecular geometries, electronic energies, dipole moments, vibrational frequencies, from the output files of popular quantum chemistry software packages, including ORCA, Qchem and Turbomole, by Lukas Wittmann
 
 [HoneyTools](https://github.com/QcmPlab/HoneyTools) modules by Gabriele Bellomia to easily deal with nontrivial honeycomb structures in real-space: generate the coordinates, compute all the neighbor-shells, get direct access to logical masks for nearest and next-nearest neighbors (nth-order can be easily computed from the shell table), hence readily build tight-binding hamiltonians, or any other lattice quantity requiring real-space geometrical information.
