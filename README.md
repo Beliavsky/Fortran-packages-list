@@ -479,6 +479,8 @@ List of projects that can be built with the [Fortran Package Manager](https://gi
 
 [finterp](https://github.com/jacobwilliams/finterp): performs multidimensional (1D-6D) linear interpolation of data on a regular grid, by Jacob Williams. The code is written in modern Fortran (2003/2008) and is object-oriented and thread safe.
 
+[interpolation](https://github.com/furstj/interpolation): Matlab/Octave-like interpolation functions such as linear and PCHIP (Piecewise Cubic Hermite Interpolating Polynomial), by Jiří Fürst
+
 [PCHIP](https://github.com/jacobwilliams/PCHIP): piecewise cubic Hermite interpolation of data, by Jacob Williams. It features software to produce a monotone and "visually pleasing" interpolant to monotone data.
 
 [regridpack](https://github.com/jacobwilliams/regridpack): routines for interpolating values between one-, two-, three-, and four-dimensional arrays defined on uniform or nonuniform orthogonal grids, from Jacob Williams
