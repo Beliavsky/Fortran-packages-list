@@ -54,6 +54,7 @@ def get_args():
 
 
 def check_url_exists(url):
+    """check accessibility of queried url"""
     try:
         # Make a HEAD request to get headers and avoid downloading the content
         response = requests.head(url, allow_redirects=True)
