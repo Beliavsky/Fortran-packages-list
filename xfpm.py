@@ -17,8 +17,6 @@ import requests
 
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 
-# t0 = time.time()
-
 
 def get_args():
     """get the command-line arguments"""
@@ -78,10 +76,6 @@ def file_reader(infile="", debug=False, test=False):
     else:
         max_lines = 10**6
 
-#    debug = False
-#with open(infile, "r", encoding="utf-8") as fp:
-
-    # for i, text in enumerate(fp):
     for i, text in enumerate(infile):
         if i > max_lines:
             break
@@ -120,9 +114,7 @@ def main():
 
     t0 = time.time()
     file_reader(infile, debugger_level, test_level)
-#     print("time elapsed (s):", "%0.2f"%(time.time() - t0))
     print(f"time elapsed (s): {(time.time() - t0):.2f}")
 
 if __name__ == "__main__":
     main()
-# print("time elapsed (s):", "%0.2f"%(time.time() - t0))
