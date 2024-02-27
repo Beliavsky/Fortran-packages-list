@@ -67,7 +67,6 @@ def check_url_exists(url):
         return False, str(e)
 
 
-# infile = "fcog_readme_20240204.md" # version from 2024-02-04 -- copy of https://github.com/Beliavsky/Fortran-code-on-GitHub/blob/main/README.md
 def file_reader(infile="", debug=False, test=False):
     """work on the input file"""
 
@@ -102,7 +101,8 @@ def file_reader(infile="", debug=False, test=False):
                 try:
                     print(text)
                 except UnicodeEncodeError as e:
-                    # Handle the error: for example, print a placeholder text or encode the text in 'utf-8' and print
+                    # Handle the error: for example, print a placeholder text or
+                    # encode the text in 'utf-8' and print
                     print("An encoding error occurred: ", e)
                 if debug:
                     print(fpm_link)
