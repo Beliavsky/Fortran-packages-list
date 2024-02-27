@@ -36,6 +36,12 @@ def get_args():
         type=argparse.FileType("rt", encoding="utf-8"),
         default=None)
 
+    parser.add_argument(
+        "-t",
+        "--test",
+        help="constrain a test run to 125 lines output",
+        action="store_true")
+
     return parser.parse_args()
 
 
@@ -54,9 +60,15 @@ def check_url_exists(url):
 
 
 # infile = "fcog_readme_20240204.md" # version from 2024-02-04 -- copy of https://github.com/Beliavsky/Fortran-code-on-GitHub/blob/main/README.md
-def file_reader(infile=""):
+def file_reader(infile="", test=False):
     """work on the input file"""
-    max_lines = 10**6
+
+    # allow a constrained test run:
+    if test:
+        max_lines = 125
+    else:
+        max_lines = 10**6
+
     debug = False
 #with open(infile, "r", encoding="utf-8") as fp:
 
@@ -93,8 +105,9 @@ def main():
 
     args = get_args()
     infile = args.file
+    test_level = args.test
 
-    file_reader(infile)
+    file_reader(infile, test_level)
 
 
 if __name__ == '__main__':
