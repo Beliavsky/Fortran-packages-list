@@ -120,7 +120,8 @@ def main():
 
     t0 = time.time()
     file_reader(infile, debugger_level, test_level)
-    print("time elapsed (s):", "%0.2f"%(time.time() - t0))
+#     print("time elapsed (s):", "%0.2f"%(time.time() - t0))
+    print(f"time elapsed (s): {(time.time() - t0):.2f}")
 
 if __name__ == "__main__":
     main()
