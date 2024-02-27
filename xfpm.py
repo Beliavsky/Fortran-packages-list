@@ -11,10 +11,12 @@ purpose  : report projects that can be built with the Fortran Package Manager
 
 import argparse
 import os
-os.environ['PYTHONIOENCODING'] = 'utf-8'
 import re
 import requests
 import time
+
+os.environ['PYTHONIOENCODING'] = 'utf-8'
+
 t0 = time.time()
 
 
