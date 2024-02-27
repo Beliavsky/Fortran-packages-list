@@ -17,7 +17,7 @@ import requests
 
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 
-t0 = time.time()
+# t0 = time.time()
 
 
 def get_args():
@@ -118,8 +118,9 @@ def main():
     debugger_level = args.debug
     test_level = args.test
 
+    t0 = time.time()
     file_reader(infile, debugger_level, test_level)
-
+    print("time elapsed (s):", "%0.2f"%(time.time() - t0))
 
 if __name__ == "__main__":
     main()
