@@ -12,8 +12,8 @@ purpose  : report projects that can be built with the Fortran Package Manager
 import argparse
 import os
 import re
-import requests
 import time
+import requests
 
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 
@@ -57,7 +57,8 @@ def check_url_exists(url):
     """check accessibility of queried url"""
     try:
         # Make a HEAD request to get headers and avoid downloading the content
-        response = requests.head(url, allow_redirects=True)
+        # https://stackoverflow.com/questions/46016004/how-to-handle-timeout-error-in-request-headurl
+        response = requests.head(url, allow_redirects=True, timeout=5)
         # Check if the response status code is in the range of 200-299 (success)
         if response.status_code in range(200, 300):
             return True, response.status_code
