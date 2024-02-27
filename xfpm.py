@@ -37,6 +37,12 @@ def get_args():
         default=None)
 
     parser.add_argument(
+        "-d",
+        "--debug",
+        help="activate the scripts internal debugger",
+        action="store_true")
+
+    parser.add_argument(
         "-t",
         "--test",
         help="constrain a test run to 125 lines output",
@@ -60,7 +66,7 @@ def check_url_exists(url):
 
 
 # infile = "fcog_readme_20240204.md" # version from 2024-02-04 -- copy of https://github.com/Beliavsky/Fortran-code-on-GitHub/blob/main/README.md
-def file_reader(infile="", test=False):
+def file_reader(infile="", debug=False, test=False):
     """work on the input file"""
 
     # allow a constrained test run:
@@ -69,7 +75,7 @@ def file_reader(infile="", test=False):
     else:
         max_lines = 10**6
 
-    debug = False
+#    debug = False
 #with open(infile, "r", encoding="utf-8") as fp:
 
     # for i, text in enumerate(fp):
@@ -105,11 +111,12 @@ def main():
 
     args = get_args()
     infile = args.file
+    debugger_level = args.debug
     test_level = args.test
 
-    file_reader(infile, test_level)
+    file_reader(infile, debugger_level, test_level)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 # print("time elapsed (s):", "%0.2f"%(time.time() - t0))
