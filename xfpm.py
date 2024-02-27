@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+"""
+name     : xfpm.py
+source   : https://github.com/Beliavsky/Fortran-packages-list
+author   : Beliavsky, Norwid Behrnd
+license  : MIT
+last edit: 2024-02-27
+purpose  : report projects that can be built with the Fortran Package Manager
+"""
+
 import argparse
 import os
 os.environ['PYTHONIOENCODING'] = 'utf-8'
