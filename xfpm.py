@@ -15,7 +15,7 @@ import re
 import time
 import requests
 
-os.environ['PYTHONIOENCODING'] = 'utf-8'
+os.environ["PYTHONIOENCODING"] = "utf-8"
 
 
 def get_args():
@@ -27,26 +27,30 @@ def get_args():
         'Directory of Fortran codes on GitHub' curated by Beliavsky et al. (see
         https://github.com/Beliavsky/Fortran-code-on-GitHub) is processed as
         input for this script.""",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
 
     parser.add_argument(
         "file",
         help="said README.me file",
         metavar="FILE",
         type=argparse.FileType("rt", encoding="utf-8"),
-        default=None)
+        default=None,
+    )
 
     parser.add_argument(
         "-d",
         "--debug",
         help="activate the scripts internal debugger",
-        action="store_true")
+        action="store_true",
+    )
 
     parser.add_argument(
         "-t",
         "--test",
         help="constrain a test run to 125 lines output",
-        action="store_true")
+        action="store_true",
+    )
 
     return parser.parse_args()
 
@@ -79,11 +83,11 @@ def file_reader(infile="", debug=False, test=False):
     for i, text in enumerate(infile):
         if i > max_lines:
             break
-        if text.startswith("*") or text.startswith("##"): # category marker
+        if text.startswith("*") or text.startswith("##"):  # category marker
             print(text)
             continue
         # text in parentheses after first after first set of brackets
-        match = re.search(r'\[.*?\]\((.*?)\)', text) 
+        match = re.search(r"\[.*?\]\((.*?)\)", text)
         # Extract the match, if it exists
         extracted_text = match.group(1) if match else None
         if extracted_text:
@@ -115,6 +119,7 @@ def main():
     t0 = time.time()
     file_reader(infile, debugger_level, test_level)
     print(f"time elapsed (s): {(time.time() - t0):.2f}")
+
 
 if __name__ == "__main__":
     main()
