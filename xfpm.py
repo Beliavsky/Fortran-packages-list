@@ -32,7 +32,7 @@ def get_args():
 
     parser.add_argument(
         "file",
-        help="said README.me file",
+        help="said README.md file",
         metavar="FILE",
         type=argparse.FileType("rt", encoding="utf-8"),
         default=None,
