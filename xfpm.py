@@ -5,7 +5,7 @@ name     : xfpm.py
 source   : https://github.com/Beliavsky/Fortran-packages-list
 author   : Beliavsky, Norwid Behrnd
 license  : MIT
-last edit: 2024-03-01
+last edit: 2024-03-12
 purpose  : report projects that can be built with the Fortran Package Manager
 """
 
@@ -90,13 +90,13 @@ def file_reader(infile="", debug=False, test=False):
         # text in parentheses after first after first set of brackets
         match = re.search(r"\[.*?\]\((.*?)\)", text)
         # Extract the match, if it exists
-        extracted_text = match.group(1) if match else None
-        if extracted_text:
+        extracted_address = match.group(1) if match else None
+        if extracted_address:
             if debug:
                 print("\n", i)
                 print(text.strip())
-                print(extracted_text)
-            fpm_link = extracted_text + "/blob/master/fpm.toml"
+                print(f"url: {extracted_address}")
+            fpm_link = extracted_address + "/blob/master/fpm.toml"
             exists, status_or_error = check_url_exists(fpm_link)
             if exists:
                 try:
