@@ -5,7 +5,7 @@ name     : xfpm.py
 source   : https://github.com/Beliavsky/Fortran-packages-list
 author   : Beliavsky, Norwid Behrnd
 license  : MIT
-last edit: 2024-03-12
+last edit: [2024-03-28 Thu]
 purpose  : report projects that can be built with the Fortran Package Manager
 """
 
@@ -73,7 +73,7 @@ def check_url_exists(url):
 
 
 def file_reader(infile="", debug=False, test=False):
-    """work on the input file"""
+    """iterate on the input file till reaching the threshold"""
 
     # allow a constrained test run:
     if test:
@@ -84,29 +84,34 @@ def file_reader(infile="", debug=False, test=False):
     for i, text in enumerate(infile):
         if i > max_lines:
             break
-        if text.startswith("*") or text.startswith("##"):  # category marker
-            print(text)
-            continue
-        # text in parentheses after first after first set of brackets
-        match = re.search(r"\[.*?\]\((.*?)\)", text)
-        # Extract the match, if it exists
-        extracted_address = match.group(1) if match else None
-        if extracted_address:
+        checker(text, debug, i)
+
+
+def checker(text, debug=False, i=1):
+    """extract the address, report if fpm.toml file is present"""
+    if text.startswith("*") or text.startswith("##"):  # category marker
+        print(text)
+        # continue
+    # text in parentheses after first after first set of brackets
+    match = re.search(r"\[.*?\]\((.*?)\)", text)
+    # Extract the match, if it exists
+    extracted_address = match.group(1) if match else None
+    if extracted_address:
+        if debug:
+            print("\n", i)
+            print(text.strip())
+            print(f"url: {extracted_address}")
+        fpm_link = extracted_address + "/blob/master/fpm.toml"
+        exists, status_or_error = check_url_exists(fpm_link)
+        if exists:
+            try:
+                print(text)
+            except UnicodeEncodeError as e:
+                # Handle the error: for example, print a placeholder text or
+                # encode the text in 'utf-8' and print
+                print("An encoding error occurred: ", e)
             if debug:
-                print("\n", i)
-                print(text.strip())
-                print(f"url: {extracted_address}")
-            fpm_link = extracted_address + "/blob/master/fpm.toml"
-            exists, status_or_error = check_url_exists(fpm_link)
-            if exists:
-                try:
-                    print(text)
-                except UnicodeEncodeError as e:
-                    # Handle the error: for example, print a placeholder text or
-                    # encode the text in 'utf-8' and print
-                    print("An encoding error occurred: ", e)
-                if debug:
-                    print(fpm_link)
+                print(fpm_link)
 
 
 def main():
