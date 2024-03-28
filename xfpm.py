@@ -13,8 +13,10 @@ import argparse
 import os
 import re
 import time
+from urllib3.util import Retry
 
 import requests
+from requests.adapters import HTTPAdapter
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
@@ -56,8 +58,15 @@ def get_args():
     return parser.parse_args()
 
 
-def check_url_exists(url):
+def check_url_exists(url, max_redirects=20, max_retries=5):
     """check accessibility of queried url"""
+
+    session = requests.Session()
+    retries = Retry(
+        total=max_retries, backoff_factor=1.1, status_forcelist=[500, 502, 503, 504]
+    )
+    session.mount("https://", HTTPAdapter(max_retries=retries))
+
     try:
         # Make a HEAD request to get headers and avoid downloading the content
         # https://stackoverflow.com/questions/46016004/how-to-handle-timeout-error-in-request-headurl
@@ -87,7 +96,7 @@ def checker(text, debug=False, i=1):
     """extract the address, report if fpm.toml file is present"""
     if text.startswith("*") or text.startswith("##"):  # category marker
         print(text)
-        # continue
+
     # text in parentheses after first after first set of brackets
     match = re.search(r"\[.*?\]\((.*?)\)", text)
     # Extract the match, if it exists
