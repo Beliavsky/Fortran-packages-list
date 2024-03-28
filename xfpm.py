@@ -75,11 +75,7 @@ def check_url_exists(url):
 def file_reader(infile="", debug=False, test=False):
     """iterate on the input file till reaching the threshold"""
 
-    # allow a constrained test run:
-    if test:
-        max_lines = 125
-    else:
-        max_lines = 10**6
+    max_lines = 125 if test else 10**6  # allow a constrained test run
 
     for i, text in enumerate(infile):
         if i > max_lines:
