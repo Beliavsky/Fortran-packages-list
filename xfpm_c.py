@@ -100,19 +100,14 @@ def file_reader(infile="", debug=False, test=False):
     return raw_data
 
 
-#def checker(text, debug=False, i=1):
 def checker(text, debug=False):
     """extract the address, report if fpm.toml file is present"""
-#    if text.startswith("*") or text.startswith("##"):  # category marker
-#        print(text)
-
     # text in parentheses after first after first set of brackets
     match = re.search(r"\[.*?\]\((.*?)\)", text)
     # Extract the match, if it exists
     extracted_address = match.group(1) if match else None
     if extracted_address:
         if debug:
-#            print("\n", i)
             print("".join([text.strip(), "\n"]))
             print(f"url: {extracted_address}")
         fpm_link = extracted_address + "/blob/master/fpm.toml"
