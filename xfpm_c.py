@@ -118,7 +118,8 @@ def checker(text, debug=False):
         exists, status_or_error = check_url_exists(fpm_link)
         if exists:
             try:
-                print("".join([text, "\n"]))
+                single_test = "".join([text, "\n"])
+                return single_test
             except UnicodeEncodeError as e:
                 # Handle the error: for example, print a placeholder text or
                 # encode the text in 'utf-8' and print
@@ -148,26 +149,38 @@ def triage_lines(raw_data, debug=False):
         if line.startswith("##"):
             if line.startswith("## Fortran code on GitHub") is False:
                 if intermediate_register:
-                    print("".join([previous_section_title, "\n"]))
 
                     if debug:
                         print(f"{len(intermediate_register)} entries to check")
 
+                    affirmative_tests = []
                     for entry in intermediate_register:
-                        checker(entry, debug)
+                        test = checker(entry, debug)
+                        if test is not None:
+                            affirmative_tests.append(test)
+                    if affirmative_tests:
+                        print("".join([previous_section_title, "\n"]))
+                        for entry in affirmative_tests:
+                            print(entry)
                     intermediate_register = []
+
                 previous_section_title = line
 
         # Equally report a section if a line about a project happens to be the
         # ultimate line of the raw_data read:
         if i == len(raw_data) - 1:
-            print("".join([previous_section_title, "\n"]))
-
             if debug:
                 print(f"{len(intermediate_register)} entries to check")
 
+            affirmative_tests = []
             for entry in intermediate_register:
-                checker(entry, debug)
+                test = checker(entry, debug)
+                if test is not None:
+                    affirmative_tests.append(test)
+            if affirmative_tests:
+                print("".join([previous_section_title, "\n"]))
+                for entry in affirmative_tests:
+                    print(entry)
 
 
 def main():
