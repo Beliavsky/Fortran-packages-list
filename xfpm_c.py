@@ -97,6 +97,10 @@ def file_reader(infile="", debug=False, test=False):
         print(f"array_prior_test_condition: {array_prior_test_condition}")
         print(f"array_after_test_condition: {array_after_test_condition}")
 
+        pattern = re.compile("^\[")  # signature of project lines in raw_data
+        projects = list(filter(pattern.match, raw_data))
+        print(f"up to {len(projects)} projectes to consider\n")
+
     return raw_data
 
 
@@ -109,7 +113,7 @@ def checker(text, debug=False):
     if extracted_address:
         if debug:
             print("".join([text.strip(), "\n"]))
-            print(f"url: {extracted_address}")
+            print(f"url: {extracted_address}\n")
         fpm_link = extracted_address + "/blob/master/fpm.toml"
         exists, status_or_error = check_url_exists(fpm_link)
         if exists:
@@ -150,7 +154,6 @@ def triage_lines(raw_data, debug=False):
                         print(f"{len(intermediate_register)} entries to check")
 
                     for entry in intermediate_register:
-#                        print("".join([entry, "\n"]))
                         checker(entry, debug)
                     intermediate_register = []
                 previous_section_title = line
@@ -164,7 +167,6 @@ def triage_lines(raw_data, debug=False):
                 print(f"{len(intermediate_register)} entries to check")
 
             for entry in intermediate_register:
-#                print("".join([entry, "\n"]))
                 checker(entry, debug)
 
 
