@@ -5,14 +5,16 @@ name     : xfpm_c.py
 source   : https://github.com/Beliavsky/Fortran-packages-list
 author   : Beliavsky, Norwid Behrnd
 license  : MIT
-last edit: [2024-04-26 Fri]
+last edit: [2024-05-07 Tue]
 purpose  : report projects that can be built with the Fortran Package Manager
 """
 
 import argparse
+import datetime
 import os
 import re
-import time
+
+from time import perf_counter
 from urllib3.util import Retry
 
 import requests
@@ -99,7 +101,7 @@ def file_reader(infile="", debug=False, test=False):
 
         pattern = re.compile("^\[")  # signature of project lines in raw_data
         projects = list(filter(pattern.match, raw_data))
-        print(f"up to {len(projects)} projectes to consider\n")
+        print(f"up to {len(projects)} projects to consider\n")
 
     return raw_data
 
@@ -160,6 +162,7 @@ def triage_lines(raw_data, debug=False):
                             affirmative_tests.append(test)
                     if affirmative_tests:
                         print("".join([previous_section_title, "\n"]))
+                        affirmative_tests = sorted(affirmative_tests, key=str.casefold)
                         for entry in affirmative_tests:
                             print(entry)
                     intermediate_register = []
@@ -191,10 +194,13 @@ def main():
     debugger_level = args.debug
     test_level = args.test
 
-    t0 = time.time()
+    start = perf_counter()
     raw_data = file_reader(infile, debugger_level, test_level)
     triage_lines(raw_data, debugger_level)
-    print(f"time elapsed (s): {(time.time() - t0):.2f}")
+    end = perf_counter()
+
+    print(f"last update: {datetime.date.today()}")
+    print(f"time elapsed (s): {(end - start):.2f}")
 
 
 if __name__ == "__main__":
