@@ -3,62 +3,113 @@
 List of projects that can be built with the [Fortran Package Manager](https://github.com/fortran-lang/fpm)
 
 * [Art and Music](#art-and-music)
+
 * [Automatic Differentiation](#automatic-differentiation)
+
 * [Astronomy and Astrophysics](#astronomy-and-astrophysics)
+
 * [Benchmarks and Benchmarking](#benchmarks-and-benchmarking)
+
 * [Biology and Medicine](#biology-and-medicine)
+
 * [Climate and Weather](#climate-and-weather)
+
 * [Code Tools](#code-tools)
+
 * [Compiler Tests](#compiler-tests)
+
 * [Computational Chemistry](#computational-chemistry)
+
 * [Computational Fluid Dynamics](#computational-fluid-dynamics)
+
 * [Containers and Generic Programming](#containers-and-generic-programming)
+
 * [Cryptography](#cryptography)
+
 * [Databases](#databases)
+
 * [Dates and Times](#dates-and-times)
+
 * [Earth Science](#earth-science)
+
 * [Economics](#economics)
+
 * [Engineering](#engineering)
+
 * [Error Handling](#error-handling)
+
 * [Expression Parsers](#expression-parsers)
+
 * [Fast Fourier Transform](#fast-fourier-transform)
+
 * [File I/O](#file-io)
+
 * [Finite Elements](#finite-elements)
+
 * [Fortran Books and Tutorials](#fortran-books-and-tutorials)
+
 * [Games and Puzzles](#games-and-puzzles)
+
 * [Graphics, Plotting and User Interfaces](#graphics-plotting-and-user-interfaces)
+
 * [General Purpose](#general-purpose)
+
 * [Interoperability](#interoperability)
+
 * [Interpolation](#interpolation)
+
 * [Linear Algebra](#linear-algebra)
+
 * [Materials Science](#materials-science)
+
 * [Molecular Dynamics](#molecular-dynamics)
+
 * [Mesh Generation](#mesh-generation)
+
 * [Multiple Precision](#multiple-precision)
+
 * [Neural Networks and Machine Learning](#neural-networks-and-machine-learning)
+
 * [Nonlinear Equations](#nonlinear-equations)
+
 * [Numerical](#numerical)
+
 * [Numerical Integration (Quadrature)](#numerical-integration-quadrature)
+
 * [Ordinary Differential Equations](#ordinary-differential-equations)
+
 * [Optimization](#optimization)
+
 * [Parallel Programming](#parallel-programming)
-* [Partial Differential Equations](#partial-differential-equations)
-* [Particle Physics](#particle-physics)
-* [Physics](#physics)
+
 * [Plasma Physics](#plasma-physics)
+
 * [Random Number Generation](#random-number-generation)
+
 * [Reactor Physics](#reactor-physics)
+
 * [Regular Expressions](#regular-expressions)
+
 * [Root Finding](#root-finding)
+
 * [Quantum Chemistry and Electronic Structure](#Quantum-Chemistry-and-Electronic-Structure)
+
 * [Sorting](#sorting)
+
 * [Special Functions](#special-functions)
+
 * [Statistics](#Statistics)
+
 * [Strings](#strings)
+
 * [Time Series](#time-series)
+
 * [Unclassified](#unclassified)
+
 * [Unit Testing](#unit-testing)
+
 * [Web Programming](#web-programming)
+
 * [XML](#xml)
 
 ## Art and Music
@@ -765,12 +816,6 @@ List of projects that can be built with the [Fortran Package Manager](https://gi
 
 [Fortran MPI exploration](https://github.com/MatthAlex/mpi-project-exploration): explores a simple MPI cartesian grid with halo region updates, mpi_f08, havaita, some clever encapsulation, and general project structure and architecture, by MatthAlex
 
-## Partial Differential Equations
-
-## Particle Physics
-
-## Plasma Physics
-
 ## Physics
 
 [codata](https://github.com/MilanSkocic/codata): provides the codata constants 2010, 2014 and 2018, by Milan Skocic. The raw codata from http://physics.nist.gov/constants are parsed line by line where the columns name, value, uncertainty and unit are formatted to be conform to Fortran double precision. [pycodata](https://github.com/MilanSkocic/pycodata) is a Python wrapper.
@@ -968,4 +1013,3 @@ List of projects that can be built with the [Fortran Package Manager](https://gi
 ## XML
 
 [FoXy](https://github.com/Fortran-FOSS-Programmers/FoXy): XML parser, from Fortran-FOSS-Programmers
-
