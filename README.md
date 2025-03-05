@@ -44,7 +44,6 @@ List of projects that can be built with the [Fortran Package Manager](https://gi
 * [Parallel Programming](#parallel-programming)
 * [Plasma Physics](#plasma-physics)
 * [Random Number Generation](#random-number-generation)
-* [Reactor Physics](#reactor-physics)
 * [Regular Expressions](#regular-expressions)
 * [Root Finding](#root-finding)
 * [Quantum Chemistry and Electronic Structure](#Quantum-Chemistry-and-Electronic-Structure)
@@ -807,8 +806,6 @@ List of projects that can be built with the [Fortran Package Manager](https://gi
 [rngff](https://github.com/Archaeologic-Inc/rngff): unified abstract interface for an object-oriented random number generator and a collection of implementations using various algorithms, by Brad Richardson
 
 [rndgen-fortran](https://github.com/wcota/rndgen-fortran): module for the [KISS](https://en.wikipedia.org/wiki/KISS_(algorithm)) random number generator that allows the use of multiple independent random number generators at the same time, by Wesley Cota, based on a code by Thomas Vojta. Module `rndgenPL_mod`, adapted from code by Silvio C. Ferreira, extends the generator to an integer power-law distribution.
-
-## Reactor Physics
 
 ## Regular Expressions
 
