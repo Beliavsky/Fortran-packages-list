@@ -1,4 +1,4 @@
-## Projects that can be built with the [Fortran Package Manager](https://github.com/fortran-lang/fpm). Please suggest changes [here](https://github.com/Beliavsky/Fortran-packages-list/issues).
+## Projects that can be built with the [Fortran Package Manager](https://github.com/fortran-lang/fpm). Also see [fortran-lang package index](https://fortran-lang.org/packages/). Please suggest changes [here](https://github.com/Beliavsky/Fortran-packages-list/issues).
 
 * [Art and Music](#art-and-music)
 * [Automatic Differentiation](#automatic-differentiation)
