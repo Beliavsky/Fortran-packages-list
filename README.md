@@ -7,7 +7,6 @@
 * [Biology and Medicine](#biology-and-medicine)
 * [Climate and Weather](#climate-and-weather)
 * [Code Tools](#code-tools)
-* [Compiler Tests](#compiler-tests)
 * [Computational Chemistry](#computational-chemistry)
 * [Computational Fluid Dynamics](#computational-fluid-dynamics)
 * [Containers and Generic Programming](#containers-and-generic-programming)
@@ -130,8 +129,6 @@
 [urclfortran](https://github.com/Verlio-H/urclfortran): work-in-progress Fortran compiler written in modern fortran, currently targeting 16 bit URCL, by Verlio-H. Also [urcl-ld](https://github.com/Verlio-H/urcl-ld) to link URCL files.
 
 [version-f](https://github.com/minhqdao/version-f): implementation of [Semantic Versioning 2.0.0](https://semver.org/) by Minh Dao that aims to be a user-friendly tool for handling versions in Fortran projects.
-
-## Compiler Tests
 
 ## Computational Chemistry
 
